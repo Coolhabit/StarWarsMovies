@@ -1,0 +1,114 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_color"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.view.fragments.DetailsFragment">
+
+    <ImageView
+        android:id="@+id/details_poster"
+        android:layout_width="@dimen/poster_width"
+        android:layout_height="@dimen/poster_height"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/details_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/default_padding"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/details_title_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/details_poster"
+        tools:text="Title" />
+
+    <TextView
+        android:id="@+id/details_duration"
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/details_text_size"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/details_delimiter1"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/details_title"
+        tools:text="Duration" />
+
+    <TextView
+        android:id="@+id/details_delimiter1"
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/details_text_size"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/default_padding"
+        app:layout_constraintEnd_toStartOf="@id/details_ratio_adult"
+        app:layout_constraintStart_toEndOf="@id/details_duration"
+        app:layout_constraintTop_toBottomOf="@id/details_title"
+        tools:text="|" />
+
+    <TextView
+        android:id="@+id/details_ratio_adult"
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/details_text_size"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/details_delimiter1"
+        app:layout_constraintTop_toBottomOf="@id/details_title"
+        tools:text="Ratio" />
+
+    <TextView
+        android:id="@+id/details_genre"
+        android:textSize="@dimen/details_text_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/default_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/details_duration"
+        tools:text="Genre" />
+
+    <TextView
+        android:id="@+id/details_synopsis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/details_headings_size"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/details_genre"
+        tools:text="Synopsis" />
+
+    <TextView
+        android:id="@+id/details_description"
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/details_description_size"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/details_synopsis"
+        tools:text="@tools:sample/lorem/random" />
+
+    <TextView
+        android:id="@+id/details_cast_crew"
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/details_headings_size"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/details_description"
+        tools:text="Cast and Crew" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

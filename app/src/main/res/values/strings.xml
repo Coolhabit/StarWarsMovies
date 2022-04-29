@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">StarWarsMovies</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="downloaded_to_gallery">"Сохранено в галерею"</string>
+    <string name="open">В галерею</string>
+
+    <string name="search">Поиск</string>
+    <string name="going_back">Назад</string>
+    <string name="film_share">Поделиться</string>
+    <string name="genre">Genre</string>
+</resources>
