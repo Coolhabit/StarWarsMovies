@@ -58,6 +58,9 @@ class CastCrewFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         film = arguments?.get(FILM) as Film
         viewModel.getCastCrew(film.id)
+
+        initPullToRefresh()
+
         //находим наш RV
         initRecycler()
         //Кладем нашу БД в RV
@@ -79,6 +82,18 @@ class CastCrewFragment : Fragment() {
             //Присваиваем адаптер
             adapter = castAdapter
             layoutManager = LinearLayoutManager(requireContext())
+        }
+    }
+
+    private fun initPullToRefresh() {
+        //Вешаем слушатель, чтобы вызвался pull to refresh
+        binding.pullToRefresh.setOnRefreshListener {
+            //Чистим адаптер(items нужно будет сделать паблик или создать для этого публичный метод)
+            castAdapter.items.clear()
+            //Делаем новый запрос фильма на сервер
+            viewModel.getCastCrew(film.id)
+            //Убираем крутящееся колечко
+            binding.pullToRefresh.isRefreshing = false
         }
     }
 
