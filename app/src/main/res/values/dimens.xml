@@ -17,4 +17,5 @@
     <dimen name="default_margin">8dp</dimen>
     <dimen name="rv_margin">16dp</dimen>
     <dimen name="progress_bar">100dp</dimen>
+    <dimen name="portrait_size">50dp</dimen>
 </resources>
