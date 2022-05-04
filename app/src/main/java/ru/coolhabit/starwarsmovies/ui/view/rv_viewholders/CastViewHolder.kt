@@ -3,27 +3,28 @@ package ru.coolhabit.starwarsmovies.ui.view.rv_viewholders
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import ru.coolhabit.starwarsmovies.data.entity.Film
-import ru.coolhabit.starwarsmovies.databinding.FilmItemBinding
+import ru.coolhabit.starwarsmovies.data.entity.Cast
+import ru.coolhabit.starwarsmovies.databinding.CastItemBinding
 
-///В конструктор класс передается layout, который мы создали(film_item.xml)
-class FilmViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    private val filmItemBinding = FilmItemBinding.bind(itemView)
+class CastViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    private val castItemBinding = CastItemBinding.bind(itemView)
     //Привязываем view из layout к переменным
-    private val title = filmItemBinding.title
-    private val poster = filmItemBinding.poster
+    private val poster = castItemBinding.castPoster
+    private val name = castItemBinding.castName
+    private val character = castItemBinding.castCharacter
 
 
-    //В этом методе кладем данные из film в наши view
-    fun bind(film: Film) {
+    //В этом методе кладем данные из cast в наши view
+    fun bind(cast: Cast) {
         //Устанавливаем заголовок
-        title.text = film.title
+        name.text = cast.name
+        character.text = cast.character
 
         //Устанавливаем постер
         //Указываем контейнер, в которм будет "жить" наша картинка
         Glide.with(itemView)
             //Загружаем сам ресурс
-            .load(ru.coolhabit.remote_module.entity.ApiConstants.IMAGES_URL + "w342" + film.poster)
+            .load(ru.coolhabit.remote_module.entity.ApiConstants.IMAGES_URL + "w342" + cast.portrait)
             //Центруем изображение
             .centerCrop()
             //Указываем ImageView, куда будем загружать изображение

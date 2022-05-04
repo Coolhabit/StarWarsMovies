@@ -4,6 +4,8 @@ import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
+import ru.coolhabit.remote_module.cast_entity.TmdbCast
+import ru.coolhabit.remote_module.cast_entity.TmdbCastResult
 import ru.coolhabit.remote_module.entity.TmdbMovie
 import ru.coolhabit.remote_module.entity.TmdbResults
 
@@ -41,4 +43,11 @@ interface TmdbApi {
         @Query(LANGUAGE) language: String,
         @Query(APPEND) appendToResponse: String
     ): Observable<TmdbMovie>
+
+    @GET("3/movie/{movie_id}/credits")
+    fun getCredits(
+        @Path(MOVIE_ID) movieId: Int,
+        @Query(API_KEY) apiKey: String,
+        @Query(LANGUAGE) language: String
+    ): Observable<TmdbCastResult>
 }

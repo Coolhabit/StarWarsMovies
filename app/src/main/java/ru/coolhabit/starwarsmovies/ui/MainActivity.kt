@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import ru.coolhabit.starwarsmovies.R
 import ru.coolhabit.starwarsmovies.data.entity.Film
 import ru.coolhabit.starwarsmovies.databinding.ActivityMainBinding
+import ru.coolhabit.starwarsmovies.ui.view.fragments.CastCrewFragment
 import ru.coolhabit.starwarsmovies.ui.view.fragments.DetailsFragment
 import ru.coolhabit.starwarsmovies.ui.view.fragments.HomeFragment
 
@@ -49,6 +50,19 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragment_placeholder, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    fun launchCastCrewFragment(film: Film) {
+        val bundleCast = Bundle()
+        bundleCast.putParcelable(FILM, film)
+        val castFragment = CastCrewFragment()
+        castFragment.arguments = bundleCast
+
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_placeholder, castFragment)
             .addToBackStack(null)
             .commit()
     }

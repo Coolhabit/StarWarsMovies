@@ -2,9 +2,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/background_color"
-    android:fitsSystemWindows="true"
     tools:context=".ui.view.fragments.DetailsFragment">
 
     <ImageView
@@ -19,8 +18,8 @@
 
     <TextView
         android:id="@+id/details_title"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:padding="@dimen/default_padding"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -96,7 +95,7 @@
         android:layout_marginTop="@dimen/default_margin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/details_synopsis"
-        tools:text="@tools:sample/lorem/random" />
+        tools:text="Synopsis" />
 
     <TextView
         android:id="@+id/details_cast_crew"
@@ -111,4 +110,31 @@
         app:layout_constraintTop_toBottomOf="@id/details_description"
         tools:text="Cast and Crew" />
 
+    <Button
+        android:id="@+id/cast_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/details_cast_crew"
+        android:text="Cast and Crew"
+        android:backgroundTint="@color/purple_700"/>
+
+    <LinearLayout
+        android:id="@+id/cast_recycler_placeholder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/rv_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cast_button">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cast_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/cast_item" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
