@@ -6,12 +6,14 @@ import com.bumptech.glide.Glide
 import ru.coolhabit.starwarsmovies.data.entity.Cast
 import ru.coolhabit.starwarsmovies.databinding.CastItemBinding
 
+private const val DELIMITER = "***"
 class CastViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val castItemBinding = CastItemBinding.bind(itemView)
     //Привязываем view из layout к переменным
     private val poster = castItemBinding.castPoster
     private val name = castItemBinding.castName
     private val character = castItemBinding.castCharacter
+    private val delimiter = castItemBinding.castDelimiter
 
 
     //В этом методе кладем данные из cast в наши view
@@ -19,6 +21,7 @@ class CastViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         //Устанавливаем заголовок
         name.text = cast.name
         character.text = cast.character
+        delimiter.text = DELIMITER
 
         //Устанавливаем постер
         //Указываем контейнер, в которм будет "жить" наша картинка

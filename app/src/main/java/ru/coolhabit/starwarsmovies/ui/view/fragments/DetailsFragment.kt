@@ -42,16 +42,6 @@ class DetailsFragment : Fragment() {
     private lateinit var binding: FragmentDetailsBinding
     private var castDataBase = listOf<Cast>()
 
-//        //Используем backing field
-//        set(value) {
-//            //Если придет такое же значение то мы выходим из метода
-//            if (field == value) return
-//            //Если пришло другое значение, то кладем его в переменную
-//            field = value
-//            //Обновляем RV адаптер
-//            castAdapter.addItems(field)
-//        }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance = true
@@ -78,10 +68,6 @@ class DetailsFragment : Fragment() {
         viewModel.castListData.observe(viewLifecycleOwner) {
             castDataBase = it
             castAdapter.addItems(it)
-        }
-
-        binding.castButton.setOnClickListener {
-            (activity as MainActivity).launchCastCrewFragment(film)
         }
     }
 
@@ -117,7 +103,7 @@ class DetailsFragment : Fragment() {
             castAdapter =
                 CastListRecyclerAdapter(object : CastListRecyclerAdapter.OnItemClickListener {
                     override fun click(cast: Cast) {
-                        Toast.makeText(requireContext(), "Я - актер!", Toast.LENGTH_SHORT).show()
+                        (activity as MainActivity).launchCastCrewFragment(film)
                     }
                 })
             //Присваиваем адаптер

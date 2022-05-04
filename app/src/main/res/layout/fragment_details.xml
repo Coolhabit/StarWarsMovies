@@ -110,16 +110,6 @@
         app:layout_constraintTop_toBottomOf="@id/details_description"
         tools:text="Cast and Crew" />
 
-    <Button
-        android:id="@+id/cast_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/default_margin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/details_cast_crew"
-        android:text="Cast and Crew"
-        android:backgroundTint="@color/purple_700"/>
-
     <LinearLayout
         android:id="@+id/cast_recycler_placeholder"
         android:layout_width="0dp"
@@ -129,7 +119,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cast_button">
+        app:layout_constraintTop_toBottomOf="@id/details_cast_crew">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/cast_recycler"

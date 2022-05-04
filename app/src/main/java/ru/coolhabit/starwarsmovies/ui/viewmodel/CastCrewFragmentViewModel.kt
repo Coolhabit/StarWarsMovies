@@ -21,7 +21,7 @@ class CastCrewFragmentViewModel: ViewModel() {
         interactor.getCastCrew(id)
             .subscribeBy(
                 onError = {
-
+                    it.printStackTrace()
                 },
                 onNext = {
                     castListData.postValue(it)
