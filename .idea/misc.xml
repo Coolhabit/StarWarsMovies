@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/StarWarsMovies/app/src/main/res/drawable/ic_arrow.xml" value="0.109" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/StarWarsMovies/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.109" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/StarWarsMovies/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.109" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/StarWarsMovies/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/StarWarsMovies/app/src/main/res/layout/activity_splash_screen.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/StarWarsMovies/app/src/main/res/layout/cast_item.xml" value="0.1" />
@@ -12,6 +15,7 @@
         <entry key="..\:/Android/SDK/AndroidStudioProjects/StarWarsMovies/app/src/main/res/layout/fragment_details.xml" value="0.1" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/StarWarsMovies/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/StarWarsMovies/app/src/main/res/menu/detais_menu.xml" value="0.23055555555555557" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/StarWarsMovies/app/src/main/res/menu/fragment_details_menu.xml" value="0.16574074074074074" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/StarWarsMovies/app/src/main/res/menu/fragment_home_menu.xml" value="0.1" />
       </map>
     </option>

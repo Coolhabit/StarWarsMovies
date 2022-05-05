@@ -3,16 +3,15 @@ package ru.coolhabit.starwarsmovies.ui.view.fragments
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
+import ru.coolhabit.starwarsmovies.R
 import ru.coolhabit.starwarsmovies.data.entity.Cast
 import ru.coolhabit.starwarsmovies.data.entity.Film
 import ru.coolhabit.starwarsmovies.data.entity.Movie
@@ -45,6 +44,7 @@ class DetailsFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance = true
+        setHasOptionsMenu(true)
     }
 
     override fun onCreateView(
@@ -68,6 +68,21 @@ class DetailsFragment : Fragment() {
         viewModel.castListData.observe(viewLifecycleOwner) {
             castDataBase = it
             castAdapter.addItems(it)
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.fragment_details_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.film_share -> {
+                Toast.makeText(requireContext(), "И он не делится властью!", Toast.LENGTH_SHORT).show()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 
