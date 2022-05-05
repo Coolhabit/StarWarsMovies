@@ -93,7 +93,7 @@ class DetailsFragment : Fragment() {
         binding.detailsCastCrew.text = CAST_CREW
 
         viewModel.genreLiveData.observe(viewLifecycleOwner) {
-            binding.detailsGenre.text = it.toString()
+            binding.detailsGenre.text = it.joinToString(", ")
         }
         viewModel.liveData.observe(viewLifecycleOwner) {
             binding.detailsTitle.text = it.title
