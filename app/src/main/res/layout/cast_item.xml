@@ -9,8 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/rv_card_margin"
-        android:elevation="@dimen/rv_card_elev"
-        android:background="@color/background_color">
+        android:background="@color/background_color"
+        android:elevation="@dimen/rv_card_elev">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cast_item_container"
@@ -31,8 +31,11 @@
                 android:id="@+id/cast_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/rv_text_size"
-                android:paddingStart="@dimen/default_padding"
+                android:layout_marginStart="@dimen/default_margin"
+                android:textColor="@color/white"
+                android:textSize="@dimen/details_description_size"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/cast_poster"
                 app:layout_constraintStart_toEndOf="@id/cast_poster"
                 app:layout_constraintTop_toTopOf="@id/cast_poster"
                 tools:text="Cast_name" />
@@ -41,8 +44,10 @@
                 android:id="@+id/cast_delimiter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/rv_text_size"
                 android:layout_marginHorizontal="@dimen/default_margin"
+                android:textSize="@dimen/rv_text_size"
+                app:layout_constraintBottom_toBottomOf="@id/cast_poster"
+                app:layout_constraintEnd_toStartOf="@id/cast_character"
                 app:layout_constraintStart_toEndOf="@id/cast_name"
                 app:layout_constraintTop_toTopOf="@id/cast_poster"
                 tools:text="***" />
@@ -51,9 +56,11 @@
                 android:id="@+id/cast_character"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/rv_text_size"
                 android:layout_marginHorizontal="@dimen/default_margin"
-                app:layout_constraintStart_toEndOf="@id/cast_delimiter"
+                android:textAllCaps="true"
+                android:textSize="@dimen/rv_text_size"
+                app:layout_constraintBottom_toBottomOf="@id/cast_poster"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/cast_poster"
                 tools:text="Cast_character" />
 

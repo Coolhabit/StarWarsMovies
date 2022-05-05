@@ -30,6 +30,7 @@ class CastViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             .load(ru.coolhabit.remote_module.entity.ApiConstants.IMAGES_URL + "w342" + cast.portrait)
             //Центруем изображение
             .centerCrop()
+            .circleCrop()
             //Указываем ImageView, куда будем загружать изображение
             .into(poster)
     }
