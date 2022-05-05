@@ -35,32 +35,10 @@
         android:layout_width="wrap_content"
         android:textSize="@dimen/details_text_size"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="@id/details_delimiter1"
-        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/details_title"
         tools:text="Duration" />
-
-    <TextView
-        android:id="@+id/details_delimiter1"
-        android:layout_width="wrap_content"
-        android:textSize="@dimen/details_text_size"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="@dimen/default_padding"
-        app:layout_constraintEnd_toStartOf="@id/details_ratio_adult"
-        app:layout_constraintStart_toEndOf="@id/details_duration"
-        app:layout_constraintTop_toBottomOf="@id/details_title"
-        tools:text="|" />
-
-    <TextView
-        android:id="@+id/details_ratio_adult"
-        android:layout_width="wrap_content"
-        android:textSize="@dimen/details_text_size"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/details_delimiter1"
-        app:layout_constraintTop_toBottomOf="@id/details_title"
-        tools:text="Ratio" />
 
     <TextView
         android:id="@+id/details_genre"

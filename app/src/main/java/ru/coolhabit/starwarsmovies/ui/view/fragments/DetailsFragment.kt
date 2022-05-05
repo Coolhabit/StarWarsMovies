@@ -23,9 +23,6 @@ import ru.coolhabit.starwarsmovies.ui.viewmodel.DetailsFragmentViewModel
 import java.util.Observer
 
 private const val GENRE = "Genre"
-private const val DELIMITER = "|"
-private const val DURATION = "1 hr 30 m"
-private const val RATIO = "Ratio"
 private const val SYNOPSIS = "Synopsis"
 private const val CAST_CREW = "Cast and Crew"
 private const val FILM = "film"
@@ -92,8 +89,6 @@ class DetailsFragment : Fragment() {
 
         //Устанавливаем описание
         binding.detailsGenre.text = GENRE
-        binding.detailsDelimiter1.text = DELIMITER
-        binding.detailsRatioAdult.text = RATIO
         binding.detailsSynopsis.text = SYNOPSIS
         binding.detailsCastCrew.text = CAST_CREW
 
