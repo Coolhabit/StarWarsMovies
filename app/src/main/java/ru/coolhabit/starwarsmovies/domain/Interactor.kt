@@ -5,12 +5,9 @@ import io.reactivex.rxjava3.kotlin.subscribeBy
 import io.reactivex.rxjava3.schedulers.Schedulers
 import io.reactivex.rxjava3.subjects.BehaviorSubject
 import ru.coolhabit.remote_module.TmdbApi
-import ru.coolhabit.remote_module.entity.TmdbMovie
 import ru.coolhabit.starwarsmovies.data.API
 import ru.coolhabit.starwarsmovies.data.MainRepository
 import ru.coolhabit.starwarsmovies.data.entity.Film
-import ru.coolhabit.starwarsmovies.data.entity.Genre
-import ru.coolhabit.starwarsmovies.data.entity.Movie
 import ru.coolhabit.starwarsmovies.data.shared.PreferenceProvider
 import ru.coolhabit.starwarsmovies.utils.Converter
 
