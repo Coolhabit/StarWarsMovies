@@ -9,6 +9,7 @@ import ru.coolhabit.remote_module.entity.TmdbMovie
 import ru.coolhabit.starwarsmovies.data.API
 import ru.coolhabit.starwarsmovies.data.MainRepository
 import ru.coolhabit.starwarsmovies.data.entity.Film
+import ru.coolhabit.starwarsmovies.data.entity.Genre
 import ru.coolhabit.starwarsmovies.data.entity.Movie
 import ru.coolhabit.starwarsmovies.data.shared.PreferenceProvider
 import ru.coolhabit.starwarsmovies.utils.Converter
@@ -42,6 +43,15 @@ class Interactor(private val repo: MainRepository, private val retrofitService: 
             .map {
                 Converter.convertMovie(it)
             }
+
+    fun getMovieGenre(id: Int) =
+        retrofitService.getMovie(id, API.KEY, "ru-RU", "none")
+            .subscribeOn(Schedulers.io())
+            .map {
+                Converter.convertGenres(it.genresList)
+            }
+
+
 
     fun getCastCrew(id: Int) = retrofitService.getCredits(id, API.KEY, "ru-RU")
             .subscribeOn(Schedulers.io())

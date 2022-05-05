@@ -11,6 +11,7 @@ import ru.coolhabit.remote_module.entity.TmdbMovie
 import ru.coolhabit.starwarsmovies.App
 import ru.coolhabit.starwarsmovies.data.entity.Cast
 import ru.coolhabit.starwarsmovies.data.entity.Film
+import ru.coolhabit.starwarsmovies.data.entity.Genre
 import ru.coolhabit.starwarsmovies.data.entity.Movie
 import ru.coolhabit.starwarsmovies.domain.Interactor
 import java.net.URL
@@ -22,6 +23,7 @@ class DetailsFragmentViewModel: ViewModel() {
     @Inject
     lateinit var interactor: Interactor
     val liveData = MutableLiveData<Movie>()
+    val genreLiveData = MutableLiveData<List<Genre>>()
     val castListData = MutableLiveData<List<Cast>>()
 
     init {
@@ -32,6 +34,10 @@ class DetailsFragmentViewModel: ViewModel() {
         interactor.getMovie(id)
             .subscribe {
                 liveData.postValue(it)
+            }
+        interactor.getMovieGenre(id)
+            .subscribe {
+                genreLiveData.postValue(it)
             }
 
     }

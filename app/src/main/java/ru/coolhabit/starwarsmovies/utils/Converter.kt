@@ -2,9 +2,11 @@ package ru.coolhabit.starwarsmovies.utils
 
 import ru.coolhabit.remote_module.cast_entity.TmdbCast
 import ru.coolhabit.remote_module.entity.TmdbFilm
+import ru.coolhabit.remote_module.entity.TmdbGenre
 import ru.coolhabit.remote_module.entity.TmdbMovie
 import ru.coolhabit.starwarsmovies.data.entity.Cast
 import ru.coolhabit.starwarsmovies.data.entity.Film
+import ru.coolhabit.starwarsmovies.data.entity.Genre
 import ru.coolhabit.starwarsmovies.data.entity.Movie
 
 object Converter {
@@ -48,5 +50,17 @@ object Converter {
             )
         }
         return resultCast
+    }
+
+    fun convertGenres(list: List<TmdbGenre>?): List<Genre> {
+        val resultGenre = mutableListOf<Genre>()
+        list?.forEach {
+            resultGenre.add(
+                Genre(
+                    name = it.name
+                )
+            )
+        }
+        return resultGenre
     }
 }

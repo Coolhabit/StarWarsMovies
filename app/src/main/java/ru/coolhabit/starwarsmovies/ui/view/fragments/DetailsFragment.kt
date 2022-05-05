@@ -88,10 +88,13 @@ class DetailsFragment : Fragment() {
         //Устанавливаем картинку
 
         //Устанавливаем описание
-        binding.detailsGenre.text = GENRE
+//        binding.detailsGenre.text = GENRE
         binding.detailsSynopsis.text = SYNOPSIS
         binding.detailsCastCrew.text = CAST_CREW
 
+        viewModel.genreLiveData.observe(viewLifecycleOwner) {
+            binding.detailsGenre.text = it.toString()
+        }
         viewModel.liveData.observe(viewLifecycleOwner) {
             binding.detailsTitle.text = it.title
             binding.detailsDescription.text = it.description

@@ -38,7 +38,7 @@ data class TmdbMovie(
     @SerializedName(BUDGET)
     val budget: Int,
     @SerializedName(GENRES)
-    val genres: List<Genre>,
+    val genresList: List<TmdbGenre>,
     @SerializedName(HOMEPAGE)
     val homepage: String,
     @SerializedName(ID)
